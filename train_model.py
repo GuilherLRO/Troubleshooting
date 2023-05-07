@@ -90,7 +90,8 @@ def train(model, train_loader, validation_loader, epochs, criterion, optimizer, 
                 # Calculate the loss
                 loss = criterion(outputs, labels)
                 # Get the predicted labels
-                _, preds = torch.max(outputs, 1)
+                max_values, max_indices = torch.max(outputs, 1)
+                preds = max_indices
                 # Count the number of correct predictions
                 running_corrects += torch.sum(preds == labels.data).item()
 
