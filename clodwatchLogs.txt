@@ -1,0 +1,1219 @@
+2023-05-07 16:05:10,971 [INFO ] main org.pytorch.serve.ModelServer - 
+Torchserve version: 0.3.1
+TS Home: /opt/conda/lib/python3.6/site-packages
+Current directory: /
+Temp directory: /home/model-server/tmp
+Number of GPUs: 0
+Number of CPUs: 1
+Max heap size: 6917 M
+Python executable: /opt/conda/bin/python3.6
+Config file: /etc/sagemaker-ts.properties
+Inference address: http://0.0.0.0:8080
+Management address: http://0.0.0.0:8080
+Metrics address: http://127.0.0.1:8082
+Model Store: /.sagemaker/ts/models
+Initial Models: model.mar
+Log dir: /logs
+Metrics dir: /logs
+Netty threads: 0
+Netty client threads: 0
+Default workers per model: 1
+Blacklist Regex: N/A
+Maximum Response Size: 6553500
+Maximum Request Size: 6553500
+Prefer direct buffer: false
+Allowed Urls: [file://.*|http(s)?://.*]
+Custom python dependency for model allowed: false
+Metrics report format: prometheus
+Enable metrics API: true
+2023-05-07 16:05:11,007 [INFO ] main org.pytorch.serve.ModelServer - Loading initial models: model.mar
+2023-05-07 16:05:12,561 [INFO ] main org.pytorch.serve.archive.ModelArchive - eTag 8573619b7586444aaf459f264458a18e
+2023-05-07 16:05:12,573 [INFO ] main org.pytorch.serve.wlm.ModelManager - Model model loaded.
+2023-05-07 16:05:12,584 [INFO ] main org.pytorch.serve.ModelServer - Initialize Inference server with: EpollServerSocketChannel.
+2023-05-07 16:05:12,659 [INFO ] main org.pytorch.serve.ModelServer - Inference API bind to: http://0.0.0.0:8080
+2023-05-07 16:05:12,659 [INFO ] main org.pytorch.serve.ModelServer - Initialize Metrics server with: EpollServerSocketChannel.
+2023-05-07 16:05:12,660 [INFO ] main org.pytorch.serve.ModelServer - Metrics API bind to: http://127.0.0.1:8082
+2023-05-07 16:05:12,695 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Listening on port: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:05:12,696 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - [PID]40
+2023-05-07 16:05:12,696 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Torch worker started.
+2023-05-07 16:05:12,696 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Python runtime: 3.6.13
+2023-05-07 16:05:12,702 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Connecting to: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:05:12,715 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Connection accepted: /home/model-server/tmp/.ts.sock.9000.
+Model server started.
+2023-05-07 16:05:12,977 [INFO ] pool-2-thread-1 TS_METRICS - CPUUtilization.Percent:0.0|#Level:Host|#hostname:container-0.local,timestamp:1683475512
+2023-05-07 16:05:12,978 [INFO ] pool-2-thread-1 TS_METRICS - DiskAvailable.Gigabytes:39.488548278808594|#Level:Host|#hostname:container-0.local,timestamp:1683475512
+2023-05-07 16:05:12,978 [INFO ] pool-2-thread-1 TS_METRICS - DiskUsage.Gigabytes:12.499713897705078|#Level:Host|#hostname:container-0.local,timestamp:1683475512
+2023-05-07 16:05:12,978 [INFO ] pool-2-thread-1 TS_METRICS - DiskUtilization.Percent:24.0|#Level:Host|#hostname:container-0.local,timestamp:1683475512
+2023-05-07 16:05:12,978 [INFO ] pool-2-thread-1 TS_METRICS - MemoryAvailable.Megabytes:29926.48046875|#Level:Host|#hostname:container-0.local,timestamp:1683475512
+2023-05-07 16:05:12,978 [INFO ] pool-2-thread-1 TS_METRICS - MemoryUsed.Megabytes:1311.83203125|#Level:Host|#hostname:container-0.local,timestamp:1683475512
+2023-05-07 16:05:12,979 [INFO ] pool-2-thread-1 TS_METRICS - MemoryUtilization.Percent:5.6|#Level:Host|#hostname:container-0.local,timestamp:1683475512
+2023-05-07 16:05:13,246 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Backend worker process died.
+2023-05-07 16:05:13,246 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Traceback (most recent call last):
+2023-05-07 16:05:13,247 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 182, in <module>
+2023-05-07 16:05:13,247 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     worker.run_server()
+2023-05-07 16:05:13,247 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 154, in run_server
+2023-05-07 16:05:13,247 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     self.handle_connection(cl_socket)
+2023-05-07 16:05:13,247 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 116, in handle_connection
+2023-05-07 16:05:13,247 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     service, result, code = self.load_model(msg)
+2023-05-07 16:05:13,247 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 89, in load_model
+2023-05-07 16:05:13,248 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2023-05-07 16:05:13,248 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_loader.py", line 104, in load
+2023-05-07 16:05:13,248 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     initialize_fn(service.context)
+2023-05-07 16:05:13,248 [INFO ] epollEventLoopGroup-5-1 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2023-05-07 16:05:13,248 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/home/model-server/tmp/models/8573619b7586444aaf459f264458a18e/handler_service.py", line 51, in initialize
+2023-05-07 16:05:13,248 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     super().initialize(context)
+2023-05-07 16:05:13,249 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/sagemaker_inference/default_handler_service.py", line 66, in initialize
+2023-05-07 16:05:13,249 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     self._service.validate_and_initialize(model_dir=model_dir)
+2023-05-07 16:05:13,249 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/sagemaker_inference/transformer.py", line 157, in validate_and_initialize
+2023-05-07 16:05:13,249 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     self._validate_user_module_and_set_functions()
+2023-05-07 16:05:13,249 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/sagemaker_inference/transformer.py", line 170, in _validate_user_module_and_set_functions
+2023-05-07 16:05:13,249 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     user_module = importlib.import_module(user_module_name)
+2023-05-07 16:05:13,249 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/importlib/__init__.py", line 126, in import_module
+2023-05-07 16:05:13,249 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.BatchAggregator - Load model failed: model, error: Worker died.
+2023-05-07 16:05:13,249 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     return _bootstrap._gcd_import(name[level:], package, level)
+2023-05-07 16:05:13,250 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stderr
+2023-05-07 16:05:13,250 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stdout
+2023-05-07 16:05:13,250 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+2023-05-07 16:05:13,250 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stdout
+2023-05-07 16:05:13,251 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 1 seconds.
+2023-05-07 16:05:13,402 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:43864 "GET /ping HTTP/1.1" 200 11
+2023-05-07 16:05:13,402 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:05:13,670 [INFO ] W-9000-model_1-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stderr
+2023-05-07 16:05:14,340 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Listening on port: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:05:14,340 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - [PID]70
+2023-05-07 16:05:14,340 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Torch worker started.
+2023-05-07 16:05:14,340 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Connecting to: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:05:14,340 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Python runtime: 3.6.13
+2023-05-07 16:05:14,342 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Connection accepted: /home/model-server/tmp/.ts.sock.9000.
+2023-05-07 16:05:14,796 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Backend worker process died.
+2023-05-07 16:05:14,796 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Traceback (most recent call last):
+2023-05-07 16:05:14,797 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 182, in <module>
+2023-05-07 16:05:14,797 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     worker.run_server()
+2023-05-07 16:05:14,797 [INFO ] epollEventLoopGroup-5-2 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2023-05-07 16:05:14,797 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 154, in run_server
+2023-05-07 16:05:14,797 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     self.handle_connection(cl_socket)
+2023-05-07 16:05:14,797 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.BatchAggregator - Load model failed: model, error: Worker died.
+2023-05-07 16:05:14,797 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stderr
+2023-05-07 16:05:14,797 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stdout
+2023-05-07 16:05:14,798 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 1 seconds.
+2023-05-07 16:05:14,797 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 116, in handle_connection
+2023-05-07 16:05:14,798 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stdout
+2023-05-07 16:05:15,203 [INFO ] W-9000-model_1-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stderr
+2023-05-07 16:05:15,886 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Listening on port: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:05:15,887 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - [PID]90
+2023-05-07 16:05:15,887 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Torch worker started.
+2023-05-07 16:05:15,887 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Python runtime: 3.6.13
+2023-05-07 16:05:15,887 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Connecting to: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:05:15,888 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Connection accepted: /home/model-server/tmp/.ts.sock.9000.
+2023-05-07 16:05:16,344 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Backend worker process died.
+2023-05-07 16:05:16,345 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Traceback (most recent call last):
+2023-05-07 16:05:16,345 [INFO ] epollEventLoopGroup-5-1 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2023-05-07 16:05:16,345 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 182, in <module>
+2023-05-07 16:05:16,345 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     worker.run_server()
+2023-05-07 16:05:16,345 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.BatchAggregator - Load model failed: model, error: Worker died.
+2023-05-07 16:05:16,345 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 154, in run_server
+2023-05-07 16:05:16,345 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     self.handle_connection(cl_socket)
+2023-05-07 16:05:16,345 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stderr
+2023-05-07 16:05:16,345 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 116, in handle_connection
+2023-05-07 16:05:16,345 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stdout
+2023-05-07 16:05:16,346 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 2 seconds.
+2023-05-07 16:05:16,346 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     service, result, code = self.load_model(msg)
+2023-05-07 16:05:16,346 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stdout
+2023-05-07 16:05:16,749 [INFO ] W-9000-model_1-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stderr
+2023-05-07 16:05:18,245 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:43864 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:05:18,245 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:05:18,434 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Listening on port: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:05:18,434 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - [PID]109
+2023-05-07 16:05:18,434 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Torch worker started.
+2023-05-07 16:05:18,435 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Python runtime: 3.6.13
+2023-05-07 16:05:18,435 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Connecting to: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:05:18,435 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Connection accepted: /home/model-server/tmp/.ts.sock.9000.
+2023-05-07 16:05:18,890 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Backend worker process died.
+2023-05-07 16:05:18,890 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Traceback (most recent call last):
+2023-05-07 16:05:18,891 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 182, in <module>
+2023-05-07 16:05:18,891 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     worker.run_server()
+2023-05-07 16:05:18,891 [INFO ] epollEventLoopGroup-5-2 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2023-05-07 16:05:18,891 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 154, in run_server
+2023-05-07 16:05:18,891 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     self.handle_connection(cl_socket)
+2023-05-07 16:05:18,891 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 116, in handle_connection
+2023-05-07 16:05:18,891 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.BatchAggregator - Load model failed: model, error: Worker died.
+2023-05-07 16:05:18,891 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     service, result, code = self.load_model(msg)
+2023-05-07 16:05:18,891 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stderr
+2023-05-07 16:05:18,891 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 89, in load_model
+2023-05-07 16:05:18,891 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stdout
+2023-05-07 16:05:18,891 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2023-05-07 16:05:18,892 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 3 seconds.
+2023-05-07 16:05:18,892 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stdout
+2023-05-07 16:05:19,301 [INFO ] W-9000-model_1-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stderr
+2023-05-07 16:05:21,979 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Listening on port: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:05:21,979 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - [PID]128
+2023-05-07 16:05:21,980 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Torch worker started.
+2023-05-07 16:05:21,980 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Python runtime: 3.6.13
+2023-05-07 16:05:21,980 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Connecting to: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:05:21,980 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Connection accepted: /home/model-server/tmp/.ts.sock.9000.
+2023-05-07 16:05:22,432 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Backend worker process died.
+2023-05-07 16:05:22,432 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Traceback (most recent call last):
+2023-05-07 16:05:22,432 [INFO ] epollEventLoopGroup-5-1 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2023-05-07 16:05:22,432 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 182, in <module>
+2023-05-07 16:05:22,433 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.BatchAggregator - Load model failed: model, error: Worker died.
+2023-05-07 16:05:22,433 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     worker.run_server()
+2023-05-07 16:05:22,433 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 154, in run_server
+2023-05-07 16:05:22,433 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stderr
+2023-05-07 16:05:22,433 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     self.handle_connection(cl_socket)
+2023-05-07 16:05:22,433 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stdout
+2023-05-07 16:05:22,433 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 116, in handle_connection
+2023-05-07 16:05:22,433 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stdout
+2023-05-07 16:05:22,433 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 5 seconds.
+2023-05-07 16:05:22,838 [INFO ] W-9000-model_1-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stderr
+2023-05-07 16:05:23,245 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:43864 "GET /ping HTTP/1.1" 200 1
+2023-05-07 16:05:23,245 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:05:27,522 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Listening on port: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:05:27,522 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - [PID]168
+2023-05-07 16:05:27,522 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Torch worker started.
+2023-05-07 16:05:27,522 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Python runtime: 3.6.13
+2023-05-07 16:05:27,522 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Connecting to: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:05:27,523 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Connection accepted: /home/model-server/tmp/.ts.sock.9000.
+2023-05-07 16:05:27,981 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Backend worker process died.
+2023-05-07 16:05:27,981 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Traceback (most recent call last):
+2023-05-07 16:05:27,981 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 182, in <module>
+2023-05-07 16:05:27,981 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     worker.run_server()
+2023-05-07 16:05:27,981 [INFO ] epollEventLoopGroup-5-2 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2023-05-07 16:05:27,981 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 154, in run_server
+2023-05-07 16:05:27,981 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     self.handle_connection(cl_socket)
+2023-05-07 16:05:27,982 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 116, in handle_connection
+2023-05-07 16:05:27,982 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.BatchAggregator - Load model failed: model, error: Worker died.
+2023-05-07 16:05:27,982 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     service, result, code = self.load_model(msg)
+2023-05-07 16:05:27,982 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 89, in load_model
+2023-05-07 16:05:27,982 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stderr
+2023-05-07 16:05:27,982 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2023-05-07 16:05:27,982 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stdout
+2023-05-07 16:05:27,982 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_loader.py", line 104, in load
+2023-05-07 16:05:27,982 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 8 seconds.
+2023-05-07 16:05:27,982 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stdout
+2023-05-07 16:05:28,245 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:43864 "GET /ping HTTP/1.1" 200 1
+2023-05-07 16:05:28,245 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:05:28,388 [INFO ] W-9000-model_1-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stderr
+2023-05-07 16:05:33,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:43864 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:05:33,245 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:05:36,071 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Listening on port: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:05:36,071 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - [PID]187
+2023-05-07 16:05:36,071 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Torch worker started.
+2023-05-07 16:05:36,071 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Python runtime: 3.6.13
+2023-05-07 16:05:36,071 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Connecting to: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:05:36,072 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Connection accepted: /home/model-server/tmp/.ts.sock.9000.
+2023-05-07 16:05:36,509 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Backend worker process died.
+2023-05-07 16:05:36,509 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Traceback (most recent call last):
+2023-05-07 16:05:36,509 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 182, in <module>
+2023-05-07 16:05:36,509 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     worker.run_server()
+2023-05-07 16:05:36,510 [INFO ] epollEventLoopGroup-5-1 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2023-05-07 16:05:36,510 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 154, in run_server
+2023-05-07 16:05:36,510 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.BatchAggregator - Load model failed: model, error: Worker died.
+2023-05-07 16:05:36,510 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     self.handle_connection(cl_socket)
+2023-05-07 16:05:36,510 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 116, in handle_connection
+2023-05-07 16:05:36,510 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stderr
+2023-05-07 16:05:36,510 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     service, result, code = self.load_model(msg)
+2023-05-07 16:05:36,510 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 89, in load_model
+2023-05-07 16:05:36,510 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stdout
+2023-05-07 16:05:36,510 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2023-05-07 16:05:36,511 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 13 seconds.
+2023-05-07 16:05:36,511 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stdout
+2023-05-07 16:05:36,917 [INFO ] W-9000-model_1-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stderr
+2023-05-07 16:05:38,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:43864 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:05:38,245 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:05:43,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:43864 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:05:43,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:05:48,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:43864 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:05:48,245 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:05:49,600 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Listening on port: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:05:49,600 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - [PID]206
+2023-05-07 16:05:49,600 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Torch worker started.
+2023-05-07 16:05:49,600 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Python runtime: 3.6.13
+2023-05-07 16:05:49,600 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Connecting to: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:05:49,601 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Connection accepted: /home/model-server/tmp/.ts.sock.9000.
+2023-05-07 16:05:50,068 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Backend worker process died.
+2023-05-07 16:05:50,068 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Traceback (most recent call last):
+2023-05-07 16:05:50,068 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 182, in <module>
+2023-05-07 16:05:50,068 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     worker.run_server()
+2023-05-07 16:05:50,068 [INFO ] epollEventLoopGroup-5-2 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2023-05-07 16:05:50,068 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 154, in run_server
+2023-05-07 16:05:50,068 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     self.handle_connection(cl_socket)
+2023-05-07 16:05:50,068 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 116, in handle_connection
+2023-05-07 16:05:50,068 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     service, result, code = self.load_model(msg)
+2023-05-07 16:05:50,068 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 89, in load_model
+2023-05-07 16:05:50,068 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2023-05-07 16:05:50,069 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_loader.py", line 104, in load
+2023-05-07 16:05:50,069 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     initialize_fn(service.context)
+2023-05-07 16:05:50,069 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.BatchAggregator - Load model failed: model, error: Worker died.
+2023-05-07 16:05:50,069 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stderr
+2023-05-07 16:05:50,069 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stdout
+2023-05-07 16:05:50,069 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 21 seconds.
+2023-05-07 16:05:50,069 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/home/model-server/tmp/models/8573619b7586444aaf459f264458a18e/handler_service.py", line 51, in initialize
+2023-05-07 16:05:50,069 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stdout
+2023-05-07 16:05:50,484 [INFO ] W-9000-model_1-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stderr
+2023-05-07 16:05:53,247 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:05:53,247 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:05:58,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:05:58,245 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:06:03,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:06:03,245 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:06:08,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:06:08,245 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:06:11,158 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Listening on port: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:06:11,158 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - [PID]226
+2023-05-07 16:06:11,159 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Torch worker started.
+2023-05-07 16:06:11,159 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Python runtime: 3.6.13
+2023-05-07 16:06:11,159 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Connecting to: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:06:11,159 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Connection accepted: /home/model-server/tmp/.ts.sock.9000.
+2023-05-07 16:06:11,612 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Backend worker process died.
+2023-05-07 16:06:11,612 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Traceback (most recent call last):
+2023-05-07 16:06:11,612 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 182, in <module>
+2023-05-07 16:06:11,612 [INFO ] epollEventLoopGroup-5-1 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2023-05-07 16:06:11,612 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     worker.run_server()
+2023-05-07 16:06:11,612 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 154, in run_server
+2023-05-07 16:06:11,612 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     self.handle_connection(cl_socket)
+2023-05-07 16:06:11,612 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 116, in handle_connection
+2023-05-07 16:06:11,613 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     service, result, code = self.load_model(msg)
+2023-05-07 16:06:11,613 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.BatchAggregator - Load model failed: model, error: Worker died.
+2023-05-07 16:06:11,613 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 89, in load_model
+2023-05-07 16:06:11,613 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2023-05-07 16:06:11,613 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_loader.py", line 104, in load
+2023-05-07 16:06:11,613 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stderr
+2023-05-07 16:06:11,613 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     initialize_fn(service.context)
+2023-05-07 16:06:11,613 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stdout
+2023-05-07 16:06:11,613 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 34 seconds.
+2023-05-07 16:06:11,613 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/home/model-server/tmp/models/8573619b7586444aaf459f264458a18e/handler_service.py", line 51, in initialize
+2023-05-07 16:06:11,613 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stdout
+2023-05-07 16:06:12,018 [INFO ] W-9000-model_1-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stderr
+2023-05-07 16:06:12,974 [INFO ] pool-2-thread-1 TS_METRICS - CPUUtilization.Percent:0.0|#Level:Host|#hostname:container-0.local,timestamp:1683475572
+2023-05-07 16:06:12,974 [INFO ] pool-2-thread-1 TS_METRICS - DiskAvailable.Gigabytes:39.49704360961914|#Level:Host|#hostname:container-0.local,timestamp:1683475572
+2023-05-07 16:06:12,974 [INFO ] pool-2-thread-1 TS_METRICS - DiskUsage.Gigabytes:12.491218566894531|#Level:Host|#hostname:container-0.local,timestamp:1683475572
+2023-05-07 16:06:12,975 [INFO ] pool-2-thread-1 TS_METRICS - DiskUtilization.Percent:24.0|#Level:Host|#hostname:container-0.local,timestamp:1683475572
+2023-05-07 16:06:12,975 [INFO ] pool-2-thread-1 TS_METRICS - MemoryAvailable.Megabytes:29864.19921875|#Level:Host|#hostname:container-0.local,timestamp:1683475572
+2023-05-07 16:06:12,975 [INFO ] pool-2-thread-1 TS_METRICS - MemoryUsed.Megabytes:1373.8515625|#Level:Host|#hostname:container-0.local,timestamp:1683475572
+2023-05-07 16:06:12,975 [INFO ] pool-2-thread-1 TS_METRICS - MemoryUtilization.Percent:5.8|#Level:Host|#hostname:container-0.local,timestamp:1683475572
+2023-05-07 16:06:13,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:06:13,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:06:18,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:06:18,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:06:23,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:06:23,245 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:06:28,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:06:28,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:06:33,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:06:33,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:06:38,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:06:38,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:06:43,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:06:43,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:06:45,702 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Listening on port: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:06:45,702 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - [PID]247
+2023-05-07 16:06:45,702 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Torch worker started.
+2023-05-07 16:06:45,702 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Python runtime: 3.6.13
+2023-05-07 16:06:45,702 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Connecting to: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:06:45,703 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Connection accepted: /home/model-server/tmp/.ts.sock.9000.
+2023-05-07 16:06:46,157 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Backend worker process died.
+2023-05-07 16:06:46,157 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Traceback (most recent call last):
+2023-05-07 16:06:46,157 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 182, in <module>
+2023-05-07 16:06:46,157 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     worker.run_server()
+2023-05-07 16:06:46,157 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 154, in run_server
+2023-05-07 16:06:46,158 [INFO ] epollEventLoopGroup-5-2 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2023-05-07 16:06:46,158 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     self.handle_connection(cl_socket)
+2023-05-07 16:06:46,158 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 116, in handle_connection
+2023-05-07 16:06:46,158 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     service, result, code = self.load_model(msg)
+2023-05-07 16:06:46,158 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 89, in load_model
+2023-05-07 16:06:46,158 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2023-05-07 16:06:46,158 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_loader.py", line 104, in load
+2023-05-07 16:06:46,158 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.BatchAggregator - Load model failed: model, error: Worker died.
+2023-05-07 16:06:46,158 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     initialize_fn(service.context)
+2023-05-07 16:06:46,158 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/home/model-server/tmp/models/8573619b7586444aaf459f264458a18e/handler_service.py", line 51, in initialize
+2023-05-07 16:06:46,158 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stderr
+2023-05-07 16:06:46,158 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stdout
+2023-05-07 16:06:46,159 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 55 seconds.
+2023-05-07 16:06:46,158 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     super().initialize(context)
+2023-05-07 16:06:46,159 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stdout
+2023-05-07 16:06:46,564 [INFO ] W-9000-model_1-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stderr
+2023-05-07 16:06:48,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:06:48,245 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:06:53,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:06:53,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:06:58,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:06:58,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:07:03,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:07:03,245 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:07:08,245 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:07:08,245 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:07:13,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:07:13,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:07:18,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:07:18,245 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:07:23,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:07:23,245 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:07:28,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:07:28,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:07:33,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:07:33,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:07:38,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:07:38,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:07:41,247 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Listening on port: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:07:41,248 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - [PID]266
+2023-05-07 16:07:41,248 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Torch worker started.
+2023-05-07 16:07:41,248 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Python runtime: 3.6.13
+2023-05-07 16:07:41,248 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Connecting to: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:07:41,248 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Connection accepted: /home/model-server/tmp/.ts.sock.9000.
+2023-05-07 16:07:41,709 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Backend worker process died.
+2023-05-07 16:07:41,709 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Traceback (most recent call last):
+2023-05-07 16:07:41,709 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 182, in <module>
+2023-05-07 16:07:41,709 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     worker.run_server()
+2023-05-07 16:07:41,709 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 154, in run_server
+2023-05-07 16:07:41,709 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     self.handle_connection(cl_socket)
+2023-05-07 16:07:41,709 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 116, in handle_connection
+2023-05-07 16:07:41,709 [INFO ] epollEventLoopGroup-5-1 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2023-05-07 16:07:41,709 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     service, result, code = self.load_model(msg)
+2023-05-07 16:07:41,709 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 89, in load_model
+2023-05-07 16:07:41,710 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.BatchAggregator - Load model failed: model, error: Worker died.
+2023-05-07 16:07:41,710 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2023-05-07 16:07:41,710 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_loader.py", line 104, in load
+2023-05-07 16:07:41,710 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stderr
+2023-05-07 16:07:41,710 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stdout
+2023-05-07 16:07:41,710 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     initialize_fn(service.context)
+2023-05-07 16:07:41,710 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 89 seconds.
+2023-05-07 16:07:41,710 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stdout
+2023-05-07 16:07:42,122 [INFO ] W-9000-model_1-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stderr
+2023-05-07 16:07:43,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:07:43,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:07:48,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:07:48,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:07:53,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:07:53,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:07:58,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:07:58,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:08:03,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:08:03,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:08:08,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:08:08,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:08:13,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:08:13,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:08:18,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:08:18,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:08:23,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:08:23,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:08:28,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:08:28,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:08:33,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:08:33,245 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:08:38,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:08:38,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:08:43,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:08:43,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:08:48,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:08:48,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:08:53,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:08:53,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:08:58,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:08:58,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:09:03,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:09:03,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:09:08,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:09:08,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:09:10,801 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Listening on port: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:09:10,801 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - [PID]285
+2023-05-07 16:09:10,801 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Torch worker started.
+2023-05-07 16:09:10,801 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Python runtime: 3.6.13
+2023-05-07 16:09:10,801 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Connecting to: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:09:10,802 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Connection accepted: /home/model-server/tmp/.ts.sock.9000.
+2023-05-07 16:09:11,271 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Backend worker process died.
+2023-05-07 16:09:11,271 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Traceback (most recent call last):
+2023-05-07 16:09:11,271 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 182, in <module>
+2023-05-07 16:09:11,271 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     worker.run_server()
+2023-05-07 16:09:11,271 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 154, in run_server
+2023-05-07 16:09:11,271 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     self.handle_connection(cl_socket)
+2023-05-07 16:09:11,271 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 116, in handle_connection
+2023-05-07 16:09:11,271 [INFO ] epollEventLoopGroup-5-2 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2023-05-07 16:09:11,271 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     service, result, code = self.load_model(msg)
+2023-05-07 16:09:11,271 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 89, in load_model
+2023-05-07 16:09:11,271 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2023-05-07 16:09:11,271 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_loader.py", line 104, in load
+2023-05-07 16:09:11,271 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     initialize_fn(service.context)
+2023-05-07 16:09:11,272 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/home/model-server/tmp/models/8573619b7586444aaf459f264458a18e/handler_service.py", line 51, in initialize
+2023-05-07 16:09:11,272 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     super().initialize(context)
+2023-05-07 16:09:11,272 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/sagemaker_inference/default_handler_service.py", line 66, in initialize
+2023-05-07 16:09:11,271 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.BatchAggregator - Load model failed: model, error: Worker died.
+2023-05-07 16:09:11,272 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stderr
+2023-05-07 16:09:11,272 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stdout
+2023-05-07 16:09:11,272 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 144 seconds.
+2023-05-07 16:09:11,272 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     self._service.validate_and_initialize(model_dir=model_dir)
+2023-05-07 16:09:11,272 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stdout
+2023-05-07 16:09:11,687 [INFO ] W-9000-model_1-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stderr
+2023-05-07 16:09:13,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:09:13,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:09:18,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:09:18,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:09:23,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:09:23,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:09:28,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:09:28,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:09:33,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:09:33,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:09:38,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:56222 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:09:38,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:09:43,246 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:49638 "GET /ping HTTP/1.1" 200 1
+2023-05-07 16:09:43,246 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:09:48,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:49638 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:09:48,245 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:09:53,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:49638 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:09:53,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:09:58,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:49638 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:09:58,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:10:03,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:49638 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:10:03,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:10:08,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:49638 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:10:08,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:10:13,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:49638 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:10:13,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:10:18,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:49638 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:10:18,245 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:10:23,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:49638 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:10:23,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:10:28,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:49638 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:10:28,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:10:33,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:49638 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:10:33,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:10:38,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:49638 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:10:38,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:10:43,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:49638 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:10:43,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:10:48,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:49638 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:10:48,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:10:53,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:49638 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:10:53,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:10:58,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:49638 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:10:58,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:11:03,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:49638 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:11:03,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:11:08,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:49638 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:11:08,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:11:13,261 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:35614 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:11:13,261 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:11:18,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:35614 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:11:18,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:11:23,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:35614 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:11:23,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:11:28,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:35614 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:11:28,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:11:33,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:35614 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:11:33,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:11:35,362 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Listening on port: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:11:35,362 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - [PID]305
+2023-05-07 16:11:35,362 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Torch worker started.
+2023-05-07 16:11:35,362 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Python runtime: 3.6.13
+2023-05-07 16:11:35,363 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Connecting to: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:11:35,363 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Connection accepted: /home/model-server/tmp/.ts.sock.9000.
+2023-05-07 16:11:35,825 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Backend worker process died.
+2023-05-07 16:11:35,825 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Traceback (most recent call last):
+2023-05-07 16:11:35,825 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 182, in <module>
+2023-05-07 16:11:35,825 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     worker.run_server()
+2023-05-07 16:11:35,825 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 154, in run_server
+2023-05-07 16:11:35,825 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     self.handle_connection(cl_socket)
+2023-05-07 16:11:35,825 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 116, in handle_connection
+2023-05-07 16:11:35,825 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     service, result, code = self.load_model(msg)
+2023-05-07 16:11:35,825 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 89, in load_model
+2023-05-07 16:11:35,825 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2023-05-07 16:11:35,825 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_loader.py", line 104, in load
+2023-05-07 16:11:35,825 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     initialize_fn(service.context)
+2023-05-07 16:11:35,825 [INFO ] epollEventLoopGroup-5-1 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2023-05-07 16:11:35,826 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/home/model-server/tmp/models/8573619b7586444aaf459f264458a18e/handler_service.py", line 51, in initialize
+2023-05-07 16:11:35,826 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     super().initialize(context)
+2023-05-07 16:11:35,826 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.BatchAggregator - Load model failed: model, error: Worker died.
+2023-05-07 16:11:35,826 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/sagemaker_inference/default_handler_service.py", line 66, in initialize
+2023-05-07 16:11:35,826 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     self._service.validate_and_initialize(model_dir=model_dir)
+2023-05-07 16:11:35,826 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/sagemaker_inference/transformer.py", line 157, in validate_and_initialize
+2023-05-07 16:11:35,826 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     self._validate_user_module_and_set_functions()
+2023-05-07 16:11:35,826 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/sagemaker_inference/transformer.py", line 170, in _validate_user_module_and_set_functions
+2023-05-07 16:11:35,826 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stderr
+2023-05-07 16:11:35,826 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stdout
+2023-05-07 16:11:35,826 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     user_module = importlib.import_module(user_module_name)
+2023-05-07 16:11:35,826 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stdout
+2023-05-07 16:11:35,827 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 233 seconds.
+2023-05-07 16:11:36,236 [INFO ] W-9000-model_1-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stderr
+2023-05-07 16:11:38,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:35614 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:11:38,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:11:43,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:35614 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:11:43,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:11:48,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:35614 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:11:48,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:11:53,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:35614 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:11:53,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:11:58,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:35614 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:11:58,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:12:03,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:35614 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:12:03,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:12:08,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:35614 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:12:08,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:12:13,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:35614 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:12:13,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:12:18,245 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:12:18,246 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:12:23,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:12:23,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:12:28,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:12:28,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:12:33,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:12:33,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:12:38,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:12:38,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:12:43,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:12:43,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:12:48,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:12:48,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:12:53,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:12:53,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:12:58,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:12:58,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:13:03,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:13:03,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:13:08,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:13:08,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:13:13,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:13:13,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:13:18,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:13:18,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:13:23,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:13:23,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:13:28,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:13:28,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:13:33,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:13:33,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:13:38,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:13:38,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:13:43,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:13:43,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:13:48,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:13:48,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:13:53,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:13:53,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:13:58,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:13:58,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:14:03,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:14:03,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:14:08,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:14:08,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:14:13,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:14:13,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:14:18,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:14:18,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:14:23,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:14:23,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:14:28,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:14:28,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:14:33,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:14:33,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:14:38,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:14:38,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:14:43,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:14:43,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:14:48,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:14:48,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:14:53,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:14:53,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:14:58,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:14:58,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:15:03,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:15:03,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:15:08,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:15:08,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:15:13,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:15:13,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:15:18,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:15:18,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:15:23,245 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 1
+2023-05-07 16:15:23,245 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:15:28,245 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 1
+2023-05-07 16:15:28,245 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:15:28,916 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Listening on port: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:15:28,916 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - [PID]325
+2023-05-07 16:15:28,917 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Torch worker started.
+2023-05-07 16:15:28,917 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Python runtime: 3.6.13
+2023-05-07 16:15:28,917 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Connecting to: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:15:28,917 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Connection accepted: /home/model-server/tmp/.ts.sock.9000.
+2023-05-07 16:15:29,380 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Backend worker process died.
+2023-05-07 16:15:29,380 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Traceback (most recent call last):
+2023-05-07 16:15:29,380 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 182, in <module>
+2023-05-07 16:15:29,380 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     worker.run_server()
+2023-05-07 16:15:29,380 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 154, in run_server
+2023-05-07 16:15:29,380 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     self.handle_connection(cl_socket)
+2023-05-07 16:15:29,380 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 116, in handle_connection
+2023-05-07 16:15:29,381 [INFO ] epollEventLoopGroup-5-2 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2023-05-07 16:15:29,381 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     service, result, code = self.load_model(msg)
+2023-05-07 16:15:29,381 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 89, in load_model
+2023-05-07 16:15:29,381 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2023-05-07 16:15:29,381 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_loader.py", line 104, in load
+2023-05-07 16:15:29,381 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     initialize_fn(service.context)
+2023-05-07 16:15:29,381 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.BatchAggregator - Load model failed: model, error: Worker died.
+2023-05-07 16:15:29,381 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/home/model-server/tmp/models/8573619b7586444aaf459f264458a18e/handler_service.py", line 51, in initialize
+2023-05-07 16:15:29,381 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     super().initialize(context)
+2023-05-07 16:15:29,381 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/sagemaker_inference/default_handler_service.py", line 66, in initialize
+2023-05-07 16:15:29,381 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     self._service.validate_and_initialize(model_dir=model_dir)
+2023-05-07 16:15:29,381 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/sagemaker_inference/transformer.py", line 157, in validate_and_initialize
+2023-05-07 16:15:29,381 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stderr
+2023-05-07 16:15:29,381 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     self._validate_user_module_and_set_functions()
+2023-05-07 16:15:29,381 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stdout
+2023-05-07 16:15:29,381 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/sagemaker_inference/transformer.py", line 170, in _validate_user_module_and_set_functions
+2023-05-07 16:15:29,381 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 377 seconds.
+2023-05-07 16:15:29,383 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stdout
+2023-05-07 16:15:29,787 [INFO ] W-9000-model_1-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stderr
+2023-05-07 16:15:33,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:15:33,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:15:38,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:15:38,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:15:43,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:15:43,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:15:48,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:15:48,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:15:53,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:15:53,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:15:58,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:15:58,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:16:03,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:16:03,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:16:08,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:16:08,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:16:13,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:16:13,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:16:18,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:16:18,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:16:23,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:16:23,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:16:28,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:16:28,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:16:33,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:16:33,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:16:38,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:37170 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:16:38,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:16:43,245 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:16:43,245 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:16:48,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:16:48,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:16:53,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:16:53,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:16:58,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:16:58,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:17:03,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:17:03,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:17:08,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:17:08,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:17:13,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:17:13,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:17:18,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:17:18,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:17:23,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:17:23,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:17:28,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:17:28,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:17:33,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:17:33,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:17:38,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:17:38,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:17:43,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:17:43,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:17:48,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:17:48,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:17:53,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:17:53,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:17:58,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:17:58,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:18:03,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:18:03,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:18:08,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:18:08,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:18:13,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:18:13,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:18:18,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:18:18,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:18:23,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:18:23,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:18:28,245 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:18:28,245 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:18:33,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:18:33,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:18:38,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:18:38,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:18:43,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:18:43,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:18:48,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:18:48,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:18:53,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:18:53,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:18:58,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:18:58,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:19:03,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:19:03,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:19:08,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:19:08,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:19:13,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:19:13,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:19:18,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:19:18,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:19:23,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:32902 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:19:23,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:19:28,245 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:38188 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:19:28,245 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:19:33,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:38188 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:19:33,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:19:38,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:38188 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:19:38,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:19:43,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:38188 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:19:43,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:19:48,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:38188 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:19:48,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:19:53,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:38188 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:19:53,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:19:58,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:38188 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:19:58,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:20:03,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:38188 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:20:03,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:20:08,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:38188 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:20:08,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:20:13,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:38188 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:20:13,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:20:18,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:38188 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:20:18,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:20:23,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:38188 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:20:23,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:20:28,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:38188 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:20:28,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:20:33,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:38188 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:20:33,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:20:38,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:38188 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:20:38,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:20:43,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:38188 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:20:43,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:20:48,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:38188 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:20:48,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:20:53,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:38188 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:20:53,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:20:58,245 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:20:58,246 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:21:03,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:21:03,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:21:08,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:21:08,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:21:13,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:21:13,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:21:18,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:21:18,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:21:23,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:21:23,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:21:28,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:21:28,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:21:33,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:21:33,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:21:38,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:21:38,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:21:43,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:21:43,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:21:46,473 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Listening on port: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:21:46,473 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - [PID]345
+2023-05-07 16:21:46,473 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Torch worker started.
+2023-05-07 16:21:46,473 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Python runtime: 3.6.13
+2023-05-07 16:21:46,473 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Connecting to: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:21:46,474 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Connection accepted: /home/model-server/tmp/.ts.sock.9000.
+2023-05-07 16:21:46,942 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Backend worker process died.
+2023-05-07 16:21:46,942 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Traceback (most recent call last):
+2023-05-07 16:21:46,942 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 182, in <module>
+2023-05-07 16:21:46,942 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     worker.run_server()
+2023-05-07 16:21:46,942 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 154, in run_server
+2023-05-07 16:21:46,942 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     self.handle_connection(cl_socket)
+2023-05-07 16:21:46,942 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 116, in handle_connection
+2023-05-07 16:21:46,942 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     service, result, code = self.load_model(msg)
+2023-05-07 16:21:46,942 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 89, in load_model
+2023-05-07 16:21:46,942 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2023-05-07 16:21:46,942 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_loader.py", line 104, in load
+2023-05-07 16:21:46,942 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     initialize_fn(service.context)
+2023-05-07 16:21:46,943 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/home/model-server/tmp/models/8573619b7586444aaf459f264458a18e/handler_service.py", line 51, in initialize
+2023-05-07 16:21:46,943 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     super().initialize(context)
+2023-05-07 16:21:46,943 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/sagemaker_inference/default_handler_service.py", line 66, in initialize
+2023-05-07 16:21:46,943 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     self._service.validate_and_initialize(model_dir=model_dir)
+2023-05-07 16:21:46,943 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/sagemaker_inference/transformer.py", line 157, in validate_and_initialize
+2023-05-07 16:21:46,943 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     self._validate_user_module_and_set_functions()
+2023-05-07 16:21:46,943 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/sagemaker_inference/transformer.py", line 170, in _validate_user_module_and_set_functions
+2023-05-07 16:21:46,943 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     user_module = importlib.import_module(user_module_name)
+2023-05-07 16:21:46,943 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/importlib/__init__.py", line 126, in import_module
+2023-05-07 16:21:46,943 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     return _bootstrap._gcd_import(name[level:], package, level)
+2023-05-07 16:21:46,943 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+2023-05-07 16:21:46,943 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+2023-05-07 16:21:46,943 [INFO ] epollEventLoopGroup-5-1 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2023-05-07 16:21:46,943 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+2023-05-07 16:21:46,943 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+2023-05-07 16:21:46,943 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+2023-05-07 16:21:46,943 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+2023-05-07 16:21:46,943 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/ml/model/code/train_model.py", line 21, in <module>
+2023-05-07 16:21:46,944 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     import smdebug.pytorch as smd
+2023-05-07 16:21:46,944 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - ModuleNotFoundError: No module named 'smdebug'
+2023-05-07 16:21:46,944 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.BatchAggregator - Load model failed: model, error: Worker died.
+2023-05-07 16:21:46,944 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stderr
+2023-05-07 16:21:46,944 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stdout
+2023-05-07 16:21:46,944 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 610 seconds.
+2023-05-07 16:21:47,357 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stdout
+2023-05-07 16:21:47,357 [INFO ] W-9000-model_1-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stderr
+2023-05-07 16:21:48,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:21:48,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:21:53,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:21:53,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:21:58,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:21:58,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:22:03,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:22:03,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:22:08,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:22:08,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:22:13,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:22:13,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:22:18,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:22:18,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:22:23,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:22:23,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:22:28,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:22:28,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:22:33,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:22:33,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:22:38,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:22:38,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:22:43,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:22:43,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:22:48,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:22:48,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:22:53,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:22:53,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:22:58,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:22:58,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:23:03,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:23:03,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:23:08,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:23:08,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:23:13,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:23:13,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:23:18,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:23:18,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:23:23,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:23:23,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:23:28,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:23:28,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:23:33,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:23:33,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:23:38,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:23:38,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:23:43,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:23:43,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:23:48,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:23:48,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:23:53,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:23:53,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:23:58,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:23:58,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:24:03,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:24:03,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:24:08,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:24:08,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:24:13,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:24:13,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:24:18,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:24:18,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:24:23,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:24:23,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:24:28,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:24:28,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:24:33,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:24:33,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:24:38,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:24:38,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:24:43,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:24:43,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:24:48,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:24:48,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:24:53,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:24:53,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:24:58,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:24:58,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:25:03,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:25:03,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:25:08,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:25:08,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:25:13,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:25:13,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:25:18,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:25:18,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:25:23,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:25:23,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:25:28,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:25:28,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:25:33,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:25:33,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:25:38,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:25:38,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:25:43,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:25:43,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:25:48,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:25:48,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:25:53,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:25:53,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:25:58,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:25:58,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:26:03,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:26:03,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:26:08,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:26:08,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:26:13,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:26:13,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:26:18,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:26:18,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:26:23,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:26:23,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:26:28,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:26:28,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:26:33,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:26:33,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:26:38,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:26:38,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:26:43,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:26:43,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:26:48,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:26:48,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:26:53,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:26:53,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:26:58,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:26:58,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:27:03,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:27:03,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:27:08,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:27:08,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:27:13,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:27:13,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:27:18,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:27:18,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:27:23,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:27:23,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:27:28,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:27:28,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:27:33,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:27:33,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:27:38,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:27:38,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:27:43,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:27:43,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:27:48,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:27:48,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:27:53,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:27:53,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:27:58,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:27:58,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:28:03,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:45080 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:28:03,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:28:08,245 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:28:08,245 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:28:13,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:28:13,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:28:18,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:28:18,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:28:23,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:28:23,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:28:28,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:28:28,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:28:33,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:28:33,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:28:38,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:28:38,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:28:43,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:28:43,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:28:48,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:28:48,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:28:53,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:28:53,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:28:58,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:28:58,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:29:03,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:29:03,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:29:08,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:29:08,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:29:13,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:29:13,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:29:18,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:29:18,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:29:23,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:29:23,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:29:28,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:29:28,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:29:33,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:29:33,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:29:38,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:29:38,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:29:43,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:29:43,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:29:48,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:29:48,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:29:53,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:29:53,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:29:58,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:29:58,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:30:03,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:30:03,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:30:08,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:30:08,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:30:13,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:30:13,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:30:18,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:30:18,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:30:23,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:30:23,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:30:28,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:30:28,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:30:33,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:30:33,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:30:38,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:30:38,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:30:43,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:30:43,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:30:48,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:30:48,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:30:53,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:30:53,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:30:58,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:30:58,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:31:03,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:31:03,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:31:08,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:31:08,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:31:13,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:31:13,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:31:18,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:31:18,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:31:23,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:31:23,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:31:28,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:31:28,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:31:33,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:31:33,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:31:38,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:31:38,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:31:43,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:31:43,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:31:48,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:31:48,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:31:53,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:31:53,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:31:57,034 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Listening on port: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:31:57,035 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - [PID]365
+2023-05-07 16:31:57,035 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Torch worker started.
+2023-05-07 16:31:57,035 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Python runtime: 3.6.13
+2023-05-07 16:31:57,035 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Connecting to: /home/model-server/tmp/.ts.sock.9000
+2023-05-07 16:31:57,036 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Connection accepted: /home/model-server/tmp/.ts.sock.9000.
+2023-05-07 16:31:57,495 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Backend worker process died.
+2023-05-07 16:31:57,495 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Traceback (most recent call last):
+2023-05-07 16:31:57,495 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 182, in <module>
+2023-05-07 16:31:57,495 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     worker.run_server()
+2023-05-07 16:31:57,495 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 154, in run_server
+2023-05-07 16:31:57,495 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     self.handle_connection(cl_socket)
+2023-05-07 16:31:57,495 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 116, in handle_connection
+2023-05-07 16:31:57,496 [INFO ] epollEventLoopGroup-5-2 org.pytorch.serve.wlm.WorkerThread - 9000 Worker disconnected. WORKER_STARTED
+2023-05-07 16:31:57,496 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     service, result, code = self.load_model(msg)
+2023-05-07 16:31:57,496 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_service_worker.py", line 89, in load_model
+2023-05-07 16:31:57,496 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.BatchAggregator - Load model failed: model, error: Worker died.
+2023-05-07 16:31:57,496 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     service = model_loader.load(model_name, model_dir, handler, gpu, batch_size, envelope)
+2023-05-07 16:31:57,496 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/opt/conda/lib/python3.6/site-packages/ts/model_loader.py", line 104, in load
+2023-05-07 16:31:57,496 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -     initialize_fn(service.context)
+2023-05-07 16:31:57,496 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stderr
+2023-05-07 16:31:57,496 [WARN ] W-9000-model_1 org.pytorch.serve.wlm.WorkerLifeCycle - terminateIOStreams() threadName=W-9000-model_1-stdout
+2023-05-07 16:31:57,496 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle -   File "/home/model-server/tmp/models/8573619b7586444aaf459f264458a18e/handler_service.py", line 51, in initialize
+2023-05-07 16:31:57,496 [INFO ] W-9000-model_1 org.pytorch.serve.wlm.WorkerThread - Retry worker: 9000 in 987 seconds.
+2023-05-07 16:31:57,496 [INFO ] W-9000-model_1-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stdout
+2023-05-07 16:31:57,904 [INFO ] W-9000-model_1-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-model_1-stderr
+2023-05-07 16:31:58,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:31:58,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:32:03,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:32:03,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:32:08,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:32:08,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:32:13,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:32:13,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:32:18,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:32:18,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:32:23,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:32:23,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:32:28,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:32:28,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:32:33,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:32:33,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:32:38,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:32:38,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:32:43,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:32:43,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:32:48,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:32:48,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:32:53,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:32:53,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:32:58,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:32:58,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:33:03,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:33:03,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:33:08,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:33:08,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:33:13,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:33:13,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:33:18,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:33:18,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:33:23,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:33:23,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:33:28,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:33:28,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:33:33,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:33:33,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:33:38,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:33:38,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:33:43,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:33:43,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:33:48,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:33:48,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:33:53,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:33:53,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:33:58,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:33:58,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:34:03,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:34:03,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:34:08,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:34:08,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:34:13,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:34:13,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:34:18,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:34:18,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:34:23,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:34:23,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:34:28,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 1
+2023-05-07 16:34:28,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:34:33,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:34:33,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:34:38,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:34:38,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:34:43,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:34:43,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:34:48,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:34:48,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:34:53,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:34:53,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:34:58,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:34:58,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:35:03,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:35:03,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:35:08,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:35:08,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:35:13,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:35:13,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:35:18,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:35:18,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:35:23,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:35:23,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:35:28,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:35:28,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:35:33,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:35:33,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:35:38,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+2023-05-07 16:35:38,244 [INFO ] W-9000-model_1 TS_METRICS - Requests2XX.Count:1|#Level:Host|#hostname:container-0.local,timestamp:null
+2023-05-07 16:35:43,244 [INFO ] W-9000-model_1 ACCESS_LOG - /169.254.178.2:55306 "GET /ping HTTP/1.1" 200 0
+
